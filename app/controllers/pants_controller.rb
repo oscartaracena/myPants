@@ -16,6 +16,33 @@ class PantsController < ApplicationController
     response = HTTParty.get(@url)
     @city_weather = response.parsed_response
     @current_temp = @city_weather['currently']['temperature']
+    @tempMin = response.parsed_response
+    @tempMax = response.parsed_response
+    @minTemp = @tempMin['daily']['data']
+    @maxTemp = @tempMax['daily']['data']
+    #####-- MAX AND MIN TEMPS - CODE #######################
+@tempMin = response.parsed_response
+@tempMax = response.parsed_response
+@minTemp = @tempMin['daily']['data']
+@maxTemp = @tempMax['daily']['data']
+###################################
+@varx = []
+@minTemp.each do |n|
+  @varx = n['temperatureMin']
+end
+@tempx = @varx
+#puts "#{varx} the lowest temp\n"
+
+###################################
+@vary=[]
+@maxTemp.each do |n|
+  @vary = n['temperatureMax']
+end
+@tempy = @vary
+#puts "#{vary} the high temp\n"
+###################################
+#####-- MAX AND MIN TEMPS - CODE #######################
+
   end
 
 end
