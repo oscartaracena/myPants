@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Weather-Pants/Shorts Determiner</title>
+<title>What to wear....</title>
 </head>
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -13,14 +12,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <body>
   <div class="container">
-  <%=@testVar%>
-<h1>Enter your zipcode or any zipcode.....</h1>
-<p>And the zipcode you entered is ...</p>
-
-<form action="/showzip" method="POST">
-  <input type="text" name="zipcode">
-  <input type="submit" value="Press the Button">
-</form>
-
+<h1>What should you be wearing on this day....</h1>
+<p>You should be wearing the following for the day...</p>
+<%= @zipcode %> is the zipcode you entered!!!<br>
+<%= @url_zipcode %> is the api output....<br>
+<%= @lat %> the lat<br>
+<%= @long %> the long <br>
+<%= @city %> city <br>
+<%=@current_temp%><br>
+<a href='/'>Home</a>
 </body>
 </html>
